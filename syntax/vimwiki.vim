@@ -323,6 +323,7 @@ execute 'syn match VimwikiCodeChar contained /'.g:vimwiki_char_code.'/'.conceal
 execute 'syn match VimwikiDelTextChar contained /'.g:vimwiki_char_deltext.'/'.conceal
 execute 'syn match VimwikiSuperScript contained /'.g:vimwiki_char_superscript.'/'.conceal
 execute 'syn match VimwikiSubScript contained /'.g:vimwiki_char_subscript.'/'.conceal
+
 " }}}
 
 " concealed link parts " {{{
@@ -381,6 +382,10 @@ execute 'syn match VimwikiSubScriptT contained /'.g:vimwiki_char_subscript.'/'
 
 let g:vimwiki_rxTodo = '\C\%(TODO:\|DONE:\|STARTED:\|FIXME:\|FIXED:\|XXX:\)'
 execute 'syntax match VimwikiTodo /'. g:vimwiki_rxTodo .'/'
+
+let g:vimwiki_rxTag = '@\w\+'
+execute 'syntax match VimwikiTag /'. g:vimwiki_rxTag .'/'
+
 " }}}
 
 " main syntax groups {{{
@@ -558,6 +563,8 @@ hi def link VimwikiSubScriptT VimwikiSubScript
 
 hi def link VimwikiTodo Todo
 hi def link VimwikiComment Comment
+
+hi def link VimwikiTag VimwikiList
 
 hi def link VimwikiPlaceholder SpecialKey
 hi def link VimwikiPlaceholderParam String
